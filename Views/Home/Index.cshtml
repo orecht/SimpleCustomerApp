@@ -1,0 +1,28 @@
+﻿@using Movolytics.Models
+@model IEnumerable<Customer>
+
+@{
+    ViewData["Title"] = "Recent customers report";
+}
+
+<h1>Recent customers report</h1>
+
+<h2>Customers who joined after 15 Feb 2016</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Joined on</th>
+            </tr>
+        </thead>
+        @foreach (var customer in Model)
+            {
+            <tr>
+                <td>@customer.CustomerName</td>
+                <td>@customer.CustomerAddress</td>
+                <td>@customer.JoiningDate</td>
+            </tr>
+        }
+    </table>
