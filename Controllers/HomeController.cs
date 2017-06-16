@@ -12,6 +12,11 @@ namespace Movolytics.Controllers
     {
         public IActionResult Index()
         {
+            return View();
+        }
+        
+        public IActionResult GetCustomersJoiningAfter()
+        {
             using (var context = new CustomerContext())
             {
                 IEnumerable<Customer> model = context.Customer
@@ -26,5 +31,6 @@ namespace Movolytics.Controllers
         {
             return View();
         }
+
     }
 }
