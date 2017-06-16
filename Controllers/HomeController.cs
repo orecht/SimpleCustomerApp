@@ -16,7 +16,7 @@ namespace Movolytics.Controllers
             {
                 IEnumerable<Customer> model = context.Customer
                     .Where(c => c.JoiningDate >= new DateTime(2016, 02, 15))
-                    .OrderBy(c => c.JoiningDate)
+                    .OrderByDescending(c => c.JoiningDate)
                     .ToList<Customer>();
                 return View(model);
             }
