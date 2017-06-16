@@ -30,8 +30,11 @@ namespace Movolytics
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddDbContext<Movolytics.Models.CustomerContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("CustomerDatabase"))
+                );
             services.AddMvc();
-            services.AddSingleton<IConfiguration>(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
