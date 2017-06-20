@@ -10,10 +10,11 @@ namespace Movolytics.Controllers
 {
     public class HomeController : Controller
     {
-        private CustomerContext CustomerContext { get; set; }
-        public HomeController(CustomerContext customerContext)
+        private IDataRepository _repository;
+
+        public HomeController(IDataRepository repository)
         {
-            CustomerContext = customerContext;
+            _repository = repository;
         }
 
         public IActionResult Index()
@@ -21,16 +22,10 @@ namespace Movolytics.Controllers
             return View();
         }
         
-        public IActionResult GetCustomersJoiningAfter()
+        public IActionResult GetCustomersJoiningAfter15022016()
         {
-            using (var context = CustomerContext)
-            {
-                IEnumerable<Customer> model = context.Customer
-                    .Where(c => c.JoiningDate >= new DateTime(2016, 02, 15))
-                    .OrderByDescending(c => c.JoiningDate)
-                    .ToList<Customer>();
-                return View(model);
-            }
+            var model = _repository.GetCustomersJoiningAfter(new DateTime(2016, 02, 15));
+            return View(model);
         }
 
         public IActionResult Error()

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 
 using Microsoft.EntityFrameworkCore;
 
+using Movolytics.Models;
+
 namespace Movolytics
 {
     public class Startup
@@ -30,9 +32,10 @@ namespace Movolytics
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddDbContext<Movolytics.Models.CustomerContext>(
+            services.AddDbContext<CustomerContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("CustomerDatabase"))
                 );
+            services.AddTransient<IDataRepository, DataRepository>();
             services.AddMvc();
 
         }
