@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 
 using Movolytics.Models;
+using Newtonsoft.Json.Serialization;
 
 namespace Movolytics
 {
@@ -38,7 +39,6 @@ namespace Movolytics
                 );
             services.AddTransient<IDataRepository, DataRepository>();
             services.AddMvc();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

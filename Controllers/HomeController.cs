@@ -23,13 +23,11 @@ namespace Movolytics.Controllers
             return View();
         }
 
-        /*
         public IActionResult GetCustomersJoiningAfter15022016()
         {
             var model = _repository.GetCustomersJoiningAfter(new DateTime(2016, 02, 15));
             return View(model);
         }
-        */
 
         public IActionResult Error()
         {

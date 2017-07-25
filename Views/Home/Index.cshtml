@@ -5,33 +5,35 @@
 
 @section Scripts
 {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            EndLoading();
-        });
-
-        function BeginLoading() {
-            $(".processing-pane").show();
-        }
-
-        function EndLoading() {
-            $(".processing-pane").hide();
-        }
-
-    </script>
-
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/js/app-movolytics.js"></script>
+    <script src="~/js/customerController.js"></script>
 }
 
 
 <h1>Recent customers report</h1>
 
-<form class="form-inline" asp-controller="Home" asp-action="GetCustomersJoiningAfter15022016" data-ajax="true" data-ajax-method="POST" data-ajax-update="#results" 
-      data-ajax-begin="BeginLoading" data-ajax-complete="EndLoading" data-ajax-error="EndLoading">
-    <p>Customers who joined after 15 Feb 2016
-    <button type="submit" class="btn btn-primary">Show</button>
-    </p>
-</form>
+<div ng-app="app-movolytics">
+    <div ng-controller="customerController as vm">
 
-<div id="results">
-    <img id="loading-results" class="processing-pane" hidden src="~/images/preloader_blue_512.gif" width="50" height="50" />
+        <form novalidate class="form-inline" name="showCustomers" ng-submit="vm.showCustomers()">
+            <p>
+                Customers who joined after 15 Feb 2016
+                <button type="submit" class="btn btn-primary">Show</button>
+            </p>
+        </form>
+
+        <div id="results">
+            <img id="loading-results" class="processing-pane" ng-show="vm.showLoading" src="~/images/preloader_blue_512.gif" width="50" height="50" />
+
+            <table class="table table-striped">
+                <tr ng-repeat="c in vm.customers">
+                    <td>{{ c.customerName }}</td>
+                    <td>{{ c.customerAddress }}</td>
+                    <td>{{ c.joiningDate }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
 </div>

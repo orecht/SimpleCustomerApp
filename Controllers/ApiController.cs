@@ -20,7 +20,7 @@ namespace Movolytics.Controllers
             _logger = logger;
         }
 
-        [HttpGet("joiningafter")]
+        [HttpGet("getjoiningafter")]
         public IActionResult GetJoiningAfter(DateTime date)
         {
             try
