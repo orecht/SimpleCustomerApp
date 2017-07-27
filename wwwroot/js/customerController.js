@@ -16,6 +16,7 @@
         vm.showLoading = false;
 
         vm.showCustomers = function () {
+            vm.customers = [];
             vm.showLoading = true;
 
             $http.get("/api/customers?joinedafterdate=2016-02-15")
@@ -25,10 +26,8 @@
                     vm.errorMessage = "Failed to load data: " + error;
                 })
                 .finally(function () {
-
+                    vm.showLoading = false;
                 });
-
-            vm.showLoading = false;
         };
 
         activate();
