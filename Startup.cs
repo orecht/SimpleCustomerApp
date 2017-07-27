@@ -49,6 +49,10 @@ namespace Movolytics
 
             if (env.IsDevelopment())
             {
+                //var delay = new TimeSpan(0, 0, 0, 0, 300); //300 ms
+                var delay = new TimeSpan(0, 0, 1); // 1s
+                app.UseSimulatedLatency(delay, delay);
+
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
             }
