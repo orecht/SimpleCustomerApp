@@ -14,6 +14,14 @@ namespace Movolytics.Models
             _customerContext = customerContext;
         }
 
+        public IEnumerable<Customer> GetCustomers()
+        {
+            IEnumerable<Customer> model = _customerContext.Customer
+                .OrderByDescending(c => c.JoiningDate)
+                .ToList<Customer>();
+            return model;
+        }
+
         public IEnumerable<Customer> GetCustomersJoiningAfter(DateTime dateFilter)
         {
             IEnumerable<Customer> model = _customerContext.Customer

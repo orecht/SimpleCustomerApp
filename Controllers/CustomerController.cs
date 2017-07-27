@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Movolytics.Controllers
 {
-    [Route("/api/customer")]
+//    [Route("/api/customers")]
     public class CustomerController : Controller
     {
         private IDataRepository _repository;
@@ -20,18 +20,28 @@ namespace Movolytics.Controllers
             _logger = logger;
         }
 
-        [HttpGet("getjoiningafter")]
-        public IActionResult GetJoiningAfter(DateTime date)
+        [HttpGet("/api/customers")]
+        public IActionResult Get([FromQuery] string joinedafterdate)
         {
             try
             {
-                var model = _repository.GetCustomersJoiningAfter(date);
+                IEnumerable<Customer> model = null;
+                if (String.IsNullOrEmpty(joinedafterdate))
+                {
+                    model = _repository.GetCustomers();
+                }
+                else
+                {
+                    var date = DateTime.Parse(joinedafterdate);
+                    model = _repository.GetCustomersJoiningAfter(date);
+                }
+
                 return Ok(model);
             }
             catch (Exception e)
             {
-                _logger.LogError($"error in GetJoiningAfter(DateTime date): {e.Message}");
-                return BadRequest($"error in /api/customer/joiningafter");
+                _logger.LogError($"error in Get(DateTime joinedafterdate): {e.Message}");
+                return BadRequest($"error in /api/customers");
             }
         }
     }

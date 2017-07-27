@@ -18,7 +18,7 @@
         vm.showCustomers = function () {
             vm.showLoading = true;
 
-            $http.get("/api/customer/getjoiningafter?date=2016-02-15")
+            $http.get("/api/customers?joinedafterdate=2016-02-15")
                 .then(function (response) {
                     angular.copy(response.data, vm.customers);
                 }, function error() {
