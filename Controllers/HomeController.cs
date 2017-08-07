@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-using Movolytics.Models;
+using SimpleCustomerApp.Models;
 
-namespace Movolytics.Controllers
+namespace SimpleCustomerApp.Controllers
 {
     public class HomeController : Controller
     {

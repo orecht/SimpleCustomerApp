@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Builder;
 
-namespace Movolytics
+namespace SimpleCustomerApp
 {
     /// <summary>
     /// Simulate request latency for test.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Movolytics.Models
+namespace SimpleCustomerApp.Models
 {
     public partial class Customer
     {

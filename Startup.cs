@@ -10,10 +10,10 @@ using Microsoft.Extensions.Logging;
 
 using Microsoft.EntityFrameworkCore;
 
-using Movolytics.Models;
+using SimpleCustomerApp.Models;
 using Newtonsoft.Json.Serialization;
 
-namespace Movolytics
+namespace SimpleCustomerApp
 {
     public class Startup
     {

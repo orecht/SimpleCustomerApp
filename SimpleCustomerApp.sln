@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movolytics", "Movolytics.csproj", "{40D6A961-51E9-4806-B03D-720D2DA378D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCustomerApp", "SimpleCustomerApp.csproj", "{40D6A961-51E9-4806-B03D-720D2DA378D1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B408B9D8-05F9-4607-963E-D2369C6D0743} = {B408B9D8-05F9-4607-963E-D2369C6D0743}
 	EndProjectSection

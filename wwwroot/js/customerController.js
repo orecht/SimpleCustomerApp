@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app-movolytics')
+        .module('app-simplecustomerapp')
         .controller('customerController', customerController);
 
     //customerController.$inject = ['$location'];

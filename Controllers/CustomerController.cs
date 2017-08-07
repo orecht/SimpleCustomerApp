@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Movolytics.Models;
+using SimpleCustomerApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Movolytics.Controllers
+namespace SimpleCustomerApp.Controllers
 {
 //    [Route("/api/customers")]
     public class CustomerController : Controller

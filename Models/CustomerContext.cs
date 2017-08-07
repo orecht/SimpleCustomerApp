@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 
-namespace Movolytics.Models
+namespace SimpleCustomerApp.Models
 {
     public partial class CustomerContext : DbContext
     {

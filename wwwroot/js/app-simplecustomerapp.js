@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app-movolytics', [
+    angular.module('app-simplecustomerapp', [
         // Angular modules 
         //'ngRoute'
 

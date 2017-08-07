@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\js\app-movolytics.js" />
+    <Content Include="wwwroot\js\app-simplecustomerapp.js" />
+    <Content Include="wwwroot\js\app-simplecustomerapps.js" />
     <Content Include="wwwroot\js\customerController.js" />
   </ItemGroup>
 

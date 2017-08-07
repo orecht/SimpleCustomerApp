@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/Movolytics.csproj"
+                "${workspaceRoot}/SimpleCustomerApp.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

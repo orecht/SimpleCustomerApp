@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Movolytics.Models
+namespace SimpleCustomerApp.Models
 {
     public interface IDataRepository
     {
