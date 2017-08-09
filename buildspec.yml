@@ -3,13 +3,13 @@ phases:
   pre_build:
     commands:
       - echo Restore started on `date`
-      - dotnet restore AspNetCoreWebApplication/AspNetCoreWebApplication.csproj
+      - dotnet restore SimpleCustomerApp.csproj
   build:
     commands:
       - echo Build started on `date`
-      - dotnet publish -c release -o ./build_output AspNetCoreWebApplication/AspNetCoreWebApplication.csproj
+      - dotnet publish -c release -o ./build_output SimpleCustomerApp.csproj
 artifacts:
   files:
-    - AspNetCoreWebApplication/build_output/**/*
+    - SimpleCustomerApp/build_output/**/*
     - scripts/**/*
     - appspec.yml
