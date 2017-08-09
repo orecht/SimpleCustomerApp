@@ -10,6 +10,6 @@ phases:
       - dotnet publish -c release -o ./build_output SimpleCustomerApp.csproj
 artifacts:
   files:
-    - SimpleCustomerApp/build_output/**/*
-    - scripts/**/*
+    - build_output/**/*
+    - build/scripts/**/*
     - appspec.yml
