@@ -17,7 +17,7 @@ namespace SimpleCustomerApp
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IWebHostEnvironment env)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -42,12 +42,12 @@ namespace SimpleCustomerApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggingBuilder loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
-            if (env.IsDevelopment())
+            if (env.EnvironmentName.Equals("Development"))
             {
                 //var delay = new TimeSpan(0, 0, 0, 0, 300); //300 ms
                 var delay = new TimeSpan(0, 0, 1); // 1s
@@ -63,11 +63,11 @@ namespace SimpleCustomerApp
 
             app.UseStaticFiles();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
